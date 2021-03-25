@@ -1,0 +1,102 @@
+{
+  "sport_hitting_tm": {
+    "copyRight": " Copyright 2017 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt  ",
+    "queryResults": {
+      "created": "2017-12-12T02:51:36",
+      "totalSize": "1",
+      "row": {
+        "gidp": "7",
+        "sac": "0",
+        "np": "1317",
+        "sport_code": "mlb",
+        "hgnd": "30",
+        "tb": "157",
+        "gidp_opp": "57",
+        "sport_id": "1",
+        "bb": "26",
+        "avg": ".292",
+        "slg": ".540",
+        "team_full": "New York Mets",
+        "ops": ".892",
+        "hbp": "2",
+        "league_full": "National League",
+        "team_abbrev": "NYM",
+        "so": "61",
+        "hfly": "23",
+        "wo": "0",
+        "league_id": "104",
+        "sf": "2",
+        "team_seq": "1",
+        "league": "NL",
+        "hpop": "0",
+        "cs": "1",
+        "season": "2017",
+        "sb": "0",
+        "go_ao": "0.60",
+        "ppa": "4.10",
+        "player_id": "493316",
+        "ibb": "5",
+        "team_id": "121",
+        "roe": "1",
+        "go": "58",
+        "hr": "17",
+        "rbi": "42",
+        "babip": ".316",
+        "lob": "120",
+        "end_date": "2017-12-12T00:00:00",
+        "xbh": "36",
+        "league_short": "National",
+        "g": "81",
+        "d": "17",
+        "sport": "MLB",
+        "team_short": "NY Mets",
+        "tpa": "321",
+        "h": "85",
+        "obp": ".352",
+        "hldr": "32",
+        "t": "2",
+        "ao": "96",
+        "r": "46",
+        "ab": "291"
+      }
+    }
+  }
+}
+
+{
+    team(yakkertech): {
+        players: {
+            A.Shew:{
+                'pos': 'RHP'
+                'so': 100,
+                'bb': 12,
+                'hr': 0,
+            }
+            M.Horacek: {
+                info: {
+                    'pos': 'LHP'
+                }
+                stats: {
+                    'so': 100,
+                    'bb': 12,
+                    'hr': 0,
+                }
+            }
+        }
+    }
+}
+
+
+
+
+{
+   biographical: {
+      firstName: "Anthony",
+      lastName: "Shew",
+      birthday: "3-11-1993"
+   },
+   statistical: {
+      hr: 0,
+      so: 1234556
+   }
+}

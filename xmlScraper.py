@@ -1,10 +1,12 @@
 import requests
 import csv
+import json
 from bs4 import BeautifulSoup
 from csv import writer
 
 # Enter URL of XML Baseball Stat sheet
-url = 'https://dartmouthsports.com/sports/baseball/stats/2013'
+url = 'https://uclabruins.com/sports/baseball/stats'
+
 
 # Collect HTML w/Beautiful Soup
 response = requests.get(url)
@@ -39,6 +41,7 @@ for data in header2[0].find_all('th'):
 with open(csvTitle, 'wt+', newline="") as f:
     writer = csv.writer(f)
     writer.writerow([title,''])
+    writer.writerow(hitterHeader)
     for row in rowsHitter:
         csv_row = []
         for cell in row.find_all(['td', 'a']):
@@ -59,5 +62,6 @@ with open(csvTitle, 'wt+', newline="") as f:
             cell.replace_with(cleanCell)
             csv_row.append(cell.get_text())
         writer.writerow(csv_row)
+
 
 print("mission success")
