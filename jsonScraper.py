@@ -108,15 +108,13 @@ while index < len(table_data):
     sho = 'SHO'
     if sho in table_data[index]:
         shutouts = table_data[index]['SHO'].split('-')
-        table_data[index].update({'shutouts' : shutouts[0]})
-        table_data[index].update({'completeGames' : shutouts[1]})
+        table_data[index].update({'completeGames' : shutouts[0]})
+        table_data[index].update({'shutouts' : shutouts[1]})
         table_data[index].pop('SHO')
 
     index += 1
 
 ##### End Data Cleaning Block #####
-
-
 
 # print(table_data[5]['GP-GS'].split('-'))
 
