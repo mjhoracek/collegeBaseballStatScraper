@@ -3,12 +3,16 @@ import csv
 import json
 from bs4 import BeautifulSoup
 from csv import writer
+from statUrls import *
+from intSwitch import intSwitch
+from floatSwitch import floatSwitch
 
 # Enter URL of XML Baseball Stat sheet
 # url = 'https://dartmouthsports.com/sports/baseball/stats/2013'
 # url = 'https://uclabruins.com/sports/baseball/stats'
 url = 'https://fightingillini.com/sports/baseball/stats'
 
+masterList = []
 
 # Collect HTML w/Beautiful Soup
 response = requests.get(url)
@@ -77,132 +81,11 @@ while index < len(table_data):
     table_data[index].pop('Player')
 
     #Convert stats into integers from strings
-    Num = '#'
-    if Num in table_data[index]:
-        table_data[index][Num] = int(table_data[index][Num])
+    for each in intStats:
+        intSwitch(each, table_data, index)
     
-    ERA = 'ERA'
-    if ERA in table_data[index]:
-        try:
-            table_data[index][ERA] = float(table_data[index][ERA])
-        except:
-            table_data[index][ERA]
-
-    WHIP = 'WHIP'
-    if WHIP in table_data[index]:
-        try:
-            table_data[index][WHIP] = float(table_data[index][WHIP])
-        except:
-            table_data[index][WHIP]
-
-    CG = 'CG'
-    if CG in table_data[index]:
-        table_data[index][CG] = int(table_data[index][CG])
-
-    HBP = 'HBP'
-    if HBP in table_data[index]:
-        table_data[index][HBP] = int(table_data[index][HBP])
-
-    SV = 'SV'
-    if SV in table_data[index]:
-        table_data[index][SV] = int(table_data[index][SV])
-    
-    IP = 'IP'
-    if IP in table_data[index]:
-        table_data[index][IP] = float(table_data[index][IP])
-    
-    H = 'H'
-    if H in table_data[index]:
-        table_data[index][H] = int(table_data[index][H])
-    
-    R = 'R'
-    if R in table_data[index]:
-        table_data[index][R] = int(table_data[index][R])
-
-    ER = 'ER'
-    if ER in table_data[index]:
-        table_data[index][ER] = int(table_data[index][ER])
-    
-    BB = 'BB'
-    if BB in table_data[index]:
-        table_data[index][BB] = int(table_data[index][BB])
-
-    SO = 'SO'
-    if SO in table_data[index]:
-        table_data[index][SO] = int(table_data[index][SO])
-
-    Double = '2B'
-    if Double in table_data[index]:
-        table_data[index][Double] = int(table_data[index][Double])
-
-    Triple = '3B'
-    if Triple in table_data[index]:
-        table_data[index][Triple] = int(table_data[index][Triple])
-
-    HR = 'HR'
-    if HR in table_data[index]:
-        table_data[index][HR] = int(table_data[index][HR])
-
-    AB = 'AB'
-    if AB in table_data[index]:
-        table_data[index][AB] = int(table_data[index][AB])
-
-    BAVG = 'B/AVG'
-    if BAVG in table_data[index]:
-        table_data[index][BAVG] = float(table_data[index][BAVG])
-
-    WP = 'WP'
-    if WP in table_data[index]:
-        table_data[index][WP] = int(table_data[index][WP])
-    
-    BK = 'BK'
-    if BK in table_data[index]:
-        table_data[index][BK] = int(table_data[index][BK])
-
-    SFA = 'SFA'
-    if SFA in table_data[index]:
-        table_data[index][SFA] = int(table_data[index][SFA])
-
-    SHA = 'SHA'
-    if SHA in table_data[index]:
-        table_data[index][SHA] = int(table_data[index][SHA])
-
-    AVG = 'AVG'
-    if AVG in table_data[index]:
-        table_data[index][AVG] = float(table_data[index][AVG])
-
-    OPS = 'OPS'
-    if OPS in table_data[index]:
-        table_data[index][OPS] = float(table_data[index][OPS])
-
-    RBI = 'RBI'
-    if RBI in table_data[index]:
-        table_data[index][RBI] = int(table_data[index][RBI])
-
-    TB = 'TB'
-    if TB in table_data[index]:
-        table_data[index][TB] = int(table_data[index][TB])
-
-    SLG = 'SLG%'
-    if SLG in table_data[index]:
-        table_data[index][SLG] = float(table_data[index][SLG])
-    
-    GDP = 'GDP'
-    if GDP in table_data[index]:
-        table_data[index][GDP] = int(table_data[index][GDP])
-
-    OB = 'OB%'
-    if OB in table_data[index]:
-        table_data[index][OB] = float(table_data[index][OB])
-
-    SF = 'SF'
-    if SF in table_data[index]:
-        table_data[index][SF] = int(table_data[index][SF])
-
-    SH = 'SH'
-    if SH in table_data[index]:
-        table_data[index][SH] = int(table_data[index][SH])
-
+    for each in floatStats:
+        floatSwitch(each, table_data, index)
     
     # Separate double values in hitter/pitcher data
     gpgs = 'GP-GS'
@@ -244,13 +127,13 @@ while index < len(table_data):
 
 ##### End Data Cleaning Block #####
 
+masterList.append({ title : table_data})
+
+# print(json.dumps(masterList, indent=4))
+print(json.dumps(masterList, indent=4))
 # print(table_data[5]['GP-GS'].split('-'))
 
-tableLength = len(table_data)
-
-print(f'***{tableLength} players found for {title}***')
-print(json.dumps(table_data[0], indent=4))
-print(json.dumps(table_data[tableLength-8], indent=4))
-
-
-# print("mission success")
+# tableLength = len(table_data)
+# print(f'***{tableLength} players found for {title}***')
+# print(json.dumps(table_data[0], indent=4))
+# print(json.dumps(table_data[tableLength-8], indent=4))
