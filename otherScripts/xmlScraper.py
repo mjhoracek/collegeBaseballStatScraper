@@ -40,7 +40,7 @@ for data in header2[0].find_all('th'):
 # Create and write data to csv file
 with open(csvTitle, 'wt+', newline="") as f:
     writer = csv.writer(f)
-    writer.writerow([title,''])
+    writer.writerow([csvTitle,''])
     writer.writerow(hitterHeader)
     for row in rowsHitter:
         csv_row = []

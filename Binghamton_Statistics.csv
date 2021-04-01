@@ -1,0 +1,34 @@
+Binghamton_Statistics.csv,
+Player,Team,POS,AVG,OBP,SLG,OPS,GP,AB,R,H,2B,3b,HR,RBI,HP,BB,SO,SB,CS
+
+Tommy Reifler,Binghamton,LF,.417,.533,.667,1.200,5,12,2,5,1,1,0,2,1,2,2,1,0
+Justin Drpich,Binghamton,3B,.375,.412,.438,.850,6,16,3,6,1,0,0,0,1,0,2,0,0
+Shane Marshall,Binghamton,CF,.300,.375,.400,.775,6,20,5,6,0,1,0,4,0,3,3,1,1
+Alex Baratta,Binghamton,2B,.286,.304,.619,.923,6,21,2,6,1,0,2,6,0,1,3,0,0
+Eric Madenberg,Binghamton,DH,.273,.333,.364,.697,4,11,0,3,1,0,0,0,1,0,3,0,0
+Cavan Tully,Binghamton,DH,.250,.333,.250,.583,3,8,0,2,0,0,0,0,0,1,3,1,0
+TJ Wegmann,Binghamton,C,.214,.389,.214,.603,5,14,1,3,0,0,0,3,1,3,7,0,0
+Jake Evans,Binghamton,SS,.188,.278,.250,.528,6,16,2,3,1,0,0,2,0,2,3,0,0
+Daniel Franchi,Binghamton,RF,.182,.250,.318,.568,6,22,2,4,1,1,0,0,0,2,10,0,0
+Kevin Gsell,Binghamton,1B,.150,.150,.300,.450,5,20,3,3,0,0,1,2,0,0,8,0,0
+Zachary Taylor,Binghamton,3B,.125,.222,.125,.347,3,8,0,1,0,0,0,0,0,1,3,0,0
+Colin Mason,Binghamton,DH,.000,.000,.000,.000,1,1,0,0,0,0,0,0,0,0,0,0,0
+Brandon Ortiz,Binghamton,3B,.000,.000,.000,.000,1,1,0,0,0,0,0,0,0,0,1,0,0
+Christian Perez,Binghamton,LF,.000,.000,.000,.000,2,1,0,0,0,0,0,0,0,0,0,0,1
+Isaiah Corry,Binghamton,PH,.000,.000,.000,.000,1,1,0,0,0,0,0,0,0,0,0,0,0
+Kevin Reilly,Binghamton,C,.000,.000,.000,.000,1,3,0,0,0,0,0,0,0,0,1,0,0
+
+Player,Team,W,L,ERA,APP,GS,CG,SHO,SV,IP,H,R,ER,BB,SO,WP,HP,OBA
+
+Dominic Buonadonna,Binghamton,0,0,0.00,1,0,0,0,0,1.0,0,0,0,2,0,0,0,.000
+Douglas Goodwin,Binghamton,0,1,0.00,1,0,0,0,0,0.1,1,1,0,1,0,0,1,.500
+Tanner Beang,Binghamton,0,0,0.00,1,0,0,0,0,1.1,1,0,0,0,2,0,0,.250
+Jack Collins,Binghamton,1,0,0.90,2,1,0,0,0,10.0,8,1,1,4,7,0,0,.222
+Josh Kopcza,Binghamton,0,1,1.80,1,1,0,0,0,5.0,5,2,1,1,2,0,1,.278
+Jake Miller,Binghamton,0,0,3.00,1,0,0,0,1,3.0,2,2,1,3,3,0,1,.222
+Ryan Bryggman,Binghamton,0,0,5.00,2,2,0,0,0,9.0,8,5,5,5,13,2,0,.235
+Thomas Babalis,Binghamton,0,2,8.10,2,2,0,0,0,6.2,12,11,6,4,6,0,0,.343
+Kyle Eskildsen,Binghamton,0,0,9.00,1,0,0,0,0,1.0,1,1,1,1,1,0,1,.333
+Justin Rosner,Binghamton,1,0,10.39,2,0,0,0,0,4.1,3,5,5,4,3,0,0,.200
+Gabe Driscoll,Binghamton,0,0,15.43,2,0,0,0,0,2.1,4,4,4,1,4,0,0,.364
+Dom DiRado,Binghamton,0,0,27.00,1,0,0,0,0,1.1,6,4,4,0,0,0,0,.667

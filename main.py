@@ -8,7 +8,7 @@ from floatSwitch import floatSwitch
 from d1Scraper import d1Scraper
 from getTeamPaths import getTeamPaths
 
-urlList = ['https://d1baseball.com/team/albany/2021/stats/', 'https://d1baseball.com/team/sunybing/2021/stats/', 'https://d1baseball.com/team/sunybing/2021/stats/']
+# urlList = ['https://d1baseball.com/team/albany/2021/stats/', 'https://d1baseball.com/team/sunybing/2021/stats/', 'https://d1baseball.com/team/sunybing/2021/stats/']
 
 pathUrl = 'https://d1baseball.com/teams/'
 
@@ -17,7 +17,7 @@ teamPaths = getTeamPaths(pathUrl)
 playerArray = []
 index = 0
 
-for each in urlList:
+for each in teamPaths:
     teamPlayers = d1Scraper(each)
     print(index)
     index += 1
@@ -26,4 +26,7 @@ for each in urlList:
     playerArray = playerArray + teamPlayers
 
 
-print((playerArray))
+print(json.dumps(playerArray, indent=4))
+
+# with open('outputfile', 'w') as fout:
+#     json.dump(playerArray, fout, indent=4)

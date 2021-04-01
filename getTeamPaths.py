@@ -1,3 +1,4 @@
+#This script goes and gets all of the URLs for all of the stat pages from d1baseball.com
 import requests
 import json
 from bs4 import BeautifulSoup
