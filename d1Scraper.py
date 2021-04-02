@@ -51,7 +51,7 @@ def d1Scraper(url):
     index = 0
     while index < len(table_data):
 
-    # Split name into two k/v pairs
+        # Split name into two k/v pairs
         name = table_data[index]['Player'].split(' ')
         table_data[index].update({'firstName' : name[0]})
         table_data[index].update({'lastName' : name[1]})
@@ -64,8 +64,13 @@ def d1Scraper(url):
         for each in floatFields:
             floatSwitch(each, table_data, index)
 
-    # Dont forget to increment yo shit
+        # Dont forget to increment yo shit
         index += 1
 
+    return table_data
 
-        return table_data
+
+
+# test = d1Scraper(url)
+# print(len(test))
+# print(json.dumps(test, indent=4))

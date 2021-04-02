@@ -28,5 +28,5 @@ for each in teamPaths:
 
 print(json.dumps(playerArray, indent=4))
 
-# with open('outputfile', 'w') as fout:
-#     json.dump(playerArray, fout, indent=4)
+with open('outputfile', 'w') as fout:
+    json.dump(playerArray, fout, indent=4)
