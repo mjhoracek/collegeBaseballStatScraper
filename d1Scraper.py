@@ -7,7 +7,7 @@ from floatSwitch import floatSwitch
 
 urlList = ['https://d1baseball.com/team/albany/2021/stats/', 'https://d1baseball.com/team/sunybing/2021/stats/', 'https://d1baseball.com/team/sunybing/2021/stats/']
 
-url = urlList[1]
+url = urlList[2]
 
 
 def d1Scraper(url): 
@@ -64,6 +64,18 @@ def d1Scraper(url):
         for each in floatFields:
             floatSwitch(each, table_data, index)
 
+        if 'POS' in table_data[index]:
+            position = table_data[index]['POS']
+            table_data[index].update({'position' : position})
+            table_data[index].pop('POS')
+
+            triples = table_data[index]['3b']
+            table_data[index].update({'3B' : triples})
+            table_data[index].pop('3b')
+        else:
+            table_data[index].update({'position' : 'P'})
+
+
         # Dont forget to increment yo shit
         index += 1
 
@@ -71,6 +83,6 @@ def d1Scraper(url):
 
 
 
-# test = d1Scraper(url)
-# print(len(test))
-# print(json.dumps(test, indent=4))
+test = d1Scraper(url)
+print(len(test))
+print(json.dumps(test, indent=4))
