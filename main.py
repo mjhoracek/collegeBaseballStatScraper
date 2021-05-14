@@ -7,8 +7,14 @@ from intSwitch import intSwitch
 from floatSwitch import floatSwitch
 from d1Scraper import d1Scraper
 from getTeamPaths import getTeamPaths
+from datetime import date
+from metaRanges import metaRanges
 
-# urlList = ['https://d1baseball.com/team/albany/2021/stats/', 'https://d1baseball.com/team/sunybing/2021/stats/', 'https://d1baseball.com/team/sunybing/2021/stats/']
+
+
+today = date.today()
+date = today.strftime("%m/%d/%Y")
+
 
 pathUrl = 'https://d1baseball.com/teams/'
 
@@ -26,7 +32,19 @@ for each in teamPaths:
     playerArray = playerArray + teamPlayers
 
 
-print(json.dumps(playerArray, indent=4))
+ranges = metaRanges(playerArray)
+
+
+fullData = {
+'meta': {
+    'lastUpdated': date,
+    'ranges' : ranges
+},
+'data': playerArray
+}
+
+
+# print(json.dumps(fullData, indent=4))
 
 with open('outputfile', 'w') as fout:
-    json.dump(playerArray, fout, indent=4)
+    json.dump(fullData, fout, indent=4)

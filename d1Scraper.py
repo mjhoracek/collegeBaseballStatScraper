@@ -1,13 +1,15 @@
 import requests
 import json
 from bs4 import BeautifulSoup
+from requests.api import options
 from d1Fields import *
 from intSwitch import intSwitch
 from floatSwitch import floatSwitch
+from metaRanges import metaRanges
 
 urlList = ['https://d1baseball.com/team/albany/2021/stats/', 'https://d1baseball.com/team/sunybing/2021/stats/', 'https://d1baseball.com/team/sunybing/2021/stats/']
 
-url = urlList[2]
+url = urlList[0]
 
 
 def d1Scraper(url): 
@@ -82,7 +84,10 @@ def d1Scraper(url):
     return table_data
 
 
-
 test = d1Scraper(url)
-print(len(test))
-print(json.dumps(test, indent=4))
+
+# pitchers = metaRanges(test)
+# print(pitchers)
+
+# print(len(test))
+# print(json.dumps(test, indent=4))
