@@ -4,4 +4,4 @@ def floatSwitch(stat, data, index):
         try:
             data[index][stat] = float(data[index][stat])
         except:
-            data[index][stat] = 9999999
+            data[index][stat] = None

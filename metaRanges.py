@@ -37,6 +37,10 @@ def metaRanges(array):
     wp = []
     hpP = []
     oba = []
+    kRate = []
+    hRate = []
+    bbRate = [] 
+    soTObb = []
 
     index = 0
     while index < len(array):
@@ -76,6 +80,10 @@ def metaRanges(array):
             wp.append(array[index]['WP'])
             hpP.append(array[index]['HP'])
             oba.append(array[index]['OBA'])
+            kRate.append(array[index]['kRate'])
+            bbRate.append(array[index]['bbRate'])
+            hRate.append(array[index]['hRate'])
+            soTObb.append(array[index]['soTObb'])
         index += 1;
     
 
@@ -88,15 +96,19 @@ def metaRanges(array):
         'CG' : [min(cg), max(cg)],
         'SHO' : [min(sho), max(sho)],
         'SV' : [min(sv), max(sv)],
-        'IP' : [min(w), max(w)],
-        'H' : [min(w), max(w)],
-        'R' : [min(w), max(w)],
-        'ER' : [min(w), max(w)],
-        'BB' : [min(w), max(w)],
-        'SO' : [min(w), max(w)],
-        'WP' : [min(w), max(w)],
-        'HP' : [min(w), max(w)],
-        'OBA' : [min(w), max(w)],
+        'IP' : [min(ip), max(ip)],
+        'H' : [min(hP), max(hP)],
+        'R' : [min(rP), max(rP)],
+        'ER' : [min(er), max(er)],
+        'BB' : [min(bb), max(bb)],
+        'SO' : [min(so), max(so)],
+        'WP' : [min(wp), max(wp)],
+        'HP' : [min(hpP), max(hpP)],
+        'OBA' : [min(oba), max(oba)],
+        'kRate' : [min(kRate), max(kRate)],
+        'bbRate' : [min(bbRate), max(bbRate)],
+        'hRate' : [min(hRate), max(hRate)],
+        'soTObb' : [min(soTObb), max(soTObb)],
     }
 
     hitters = {

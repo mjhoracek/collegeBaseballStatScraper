@@ -77,6 +77,31 @@ def d1Scraper(url):
         else:
             table_data[index].update({'position' : 'P'})
 
+            # Prevents division by zero if IP = 0
+            if table_data[index]['IP'] > 0:
+                kRate = round((table_data[index]['SO'] / table_data[index]['IP']*9), 2)
+                table_data[index].update({'kRate': kRate})
+                hRate = round((table_data[index]['H'] / table_data[index]['IP']*9), 2)
+                table_data[index].update({'hRate': hRate})
+                bbRate = round((table_data[index]['BB'] / table_data[index]['IP']*9), 2)
+                table_data[index].update({'bbRate': bbRate})
+
+            if table_data[index]['BB'] > 0:
+                soTObb = round((table_data[index]['SO'] / table_data[index]['BB']), 2)
+                table_data[index].update({'soTObb': soTObb})
+            
+            if table_data[index]['IP'] <= 0:
+                kRate = 0
+                hRate = 0
+                bbRate = 0
+                table_data[index].update({'kRate': kRate})
+                table_data[index].update({'bbRate': bbRate})
+                table_data[index].update({'hRate': bbRate})
+            
+            if table_data[index]['BB'] <= 0:
+                soTObb = 0
+                table_data[index].update({'soTObb': soTObb})
+
 
         # Dont forget to increment yo shit
         index += 1
@@ -90,4 +115,4 @@ test = d1Scraper(url)
 # print(pitchers)
 
 # print(len(test))
-# print(json.dumps(test, indent=4))
+print(json.dumps(test, indent=4))
