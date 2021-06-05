@@ -178,14 +178,36 @@ def jucoScraper(url):
             table_data[index].update({'HP' : None})
             table_data[index].update({'OBA' : None})
 
+                        # Prevents division by zero if IP = 0
+            if table_data[index]['IP'] > 0:
+                hRate = round((table_data[index]['H'] / table_data[index]['IP']*9), 2)
+                table_data[index].update({'hRate': hRate})
+                bbRate = round((table_data[index]['BB'] / table_data[index]['IP']*9), 2)
+                table_data[index].update({'bbRate': bbRate})
+
+            if table_data[index]['BB'] > 0:
+                soTObb = round((table_data[index]['SO'] / table_data[index]['BB']), 2)
+                table_data[index].update({'soTObb': soTObb})
+            
+            if table_data[index]['IP'] <= 0:
+                hRate = 0
+                bbRate = 0
+                table_data[index].update({'kRate': kRate})
+                table_data[index].update({'bbRate': bbRate})
+                table_data[index].update({'hRate': bbRate})
+            
+            if table_data[index]['BB'] <= 0:
+                soTObb = 0
+                table_data[index].update({'soTObb': soTObb})
+
 
         # Dont forget to increment yo shit
         index += 1
 
 
-    print(json.dumps(table_data, indent=4))
+    # print(json.dumps(table_data, indent=4))
 
-    # return table_data
-    return
+    return table_data
+    
 
 jucoScraper(url)

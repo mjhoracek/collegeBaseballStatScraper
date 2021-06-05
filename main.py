@@ -48,3 +48,4 @@ fullData = {
 
 with open('outputfile', 'w') as fout:
     json.dump(fullData, fout, indent=4)
+    
